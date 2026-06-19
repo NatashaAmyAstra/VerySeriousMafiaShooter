@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static InputManager;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
 public class PlayerController : MonoBehaviour
@@ -15,7 +16,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveInput;
 
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         myCollider = GetComponent<BoxCollider2D>();
@@ -27,24 +28,20 @@ public class PlayerController : MonoBehaviour
         contactFilter.useTriggers = false;
     }
 
-    void Update()
+
+    private void Start()
     {
-        float x = 0;
-        float y = 0;
-
-        if (Keyboard.current != null)
-        {
-            if (Keyboard.current.wKey.isPressed || Keyboard.current.upArrowKey.isPressed) y = 1;
-            else if (Keyboard.current.sKey.isPressed || Keyboard.current.downArrowKey.isPressed) y = -1;
-
-            if (Keyboard.current.dKey.isPressed || Keyboard.current.rightArrowKey.isPressed) x = 1;
-            else if (Keyboard.current.aKey.isPressed || Keyboard.current.leftArrowKey.isPressed) x = -1;
-        }
-
-        moveInput = new Vector2(x, y).normalized;
+        // subscribe SetMoveInput to the InputManager singleton's movement event
+        InputManager.Instance.OnPlayerMovement += SetMoveInput;
     }
 
-    void FixedUpdate()
+    private void SetMoveInput(object sender, OnPlayerMovementEventArgs args)
+    {
+        moveInput = args.InputDirection;
+    }
+
+
+    private void FixedUpdate()
     {
         Vector2 velocity = moveInput * speed * Time.fixedDeltaTime;
 
