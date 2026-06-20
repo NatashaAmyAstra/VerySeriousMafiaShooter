@@ -7,17 +7,17 @@ public class OrbitAimAtTarget : MonoBehaviour
     protected Transform _targetObjectTransform;
     private float _distanceFromOrigin;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _distanceFromOrigin = Vector2.Distance(transform.position, _orbitOriginTransform.position);
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SetDefaultTarget();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         HandleAimPosition();
     }
