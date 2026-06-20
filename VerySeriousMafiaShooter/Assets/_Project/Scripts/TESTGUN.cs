@@ -5,7 +5,7 @@ public class TESTGUN : MonoBehaviour
 {
     public GameObject BulletToChamber;
 
-    public IChamberedBullet ChamberedBullet;
+    public BasicTriggerBehaviour ChamberedBullet;
     public InputAction shootAction;
 
     private void Awake()
@@ -13,11 +13,11 @@ public class TESTGUN : MonoBehaviour
         shootAction.Enable();
         shootAction.performed += Shoot;
 
-        ChamberedBullet = BulletToChamber.GetComponent<IChamberedBullet>();
+        ChamberedBullet = BulletToChamber.GetComponent<BasicTriggerBehaviour>();
     }
 
     private void Shoot(InputAction.CallbackContext value)
     {
-        ChamberedBullet.Trigger(transform.position, transform.right);
+        
     }
 }

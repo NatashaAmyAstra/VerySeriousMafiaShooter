@@ -15,5 +15,5 @@ MonoBehaviour:
   Speed: 100
   Variance: 20
   KillTime: 5
-  Inaccuracy: 5
+  Inaccuracy: 2.5
   ProjectileCount: 5

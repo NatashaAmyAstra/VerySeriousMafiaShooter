@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5500c091c4de67344811b279db23ffe1, type: 3}
-  m_Name: DefaultBullet
+  m_Name: BasicBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletDataSO
   Speed: 100
   KillTime: 5

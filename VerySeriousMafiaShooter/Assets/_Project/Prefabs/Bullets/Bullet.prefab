@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 5766812397353898007}
   - component: {fileID: -6383761576530170133}
   m_Layer: 0
-  m_Name: DefaultBullet
+  m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5766812397353898007
 Transform:
   m_ObjectHideFlags: 0
@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0fe9fa7b5989f46bd579f5b4dac88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletBehaviour
-  _bulletDataSO: {fileID: 11400000, guid: b0d84bbc085dc0d418b6f28fef99abdd, type: 2}
 --- !u!1 &8664087435760328300
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,7 +72,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.15, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5766812397353898007}
