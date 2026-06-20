@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CharacterLookRotationHandler : MonoBehaviour
 {
-    private const string ROTATION_STATE = "rotation_state";
+    private const string BLEND = "Blend";
 
     [SerializeField] private Animator _animator;
 
@@ -21,7 +21,7 @@ public class CharacterLookRotationHandler : MonoBehaviour
 
 
         int rotationStateInt = Mod(Mathf.RoundToInt((lookAngle / 60)), 6);
-        _animator.SetInteger(ROTATION_STATE, rotationStateInt);
+        _animator.SetFloat(BLEND, rotationStateInt);
     }
 
     private int Mod(int a, int n)
