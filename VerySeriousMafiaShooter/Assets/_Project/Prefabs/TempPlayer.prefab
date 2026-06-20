@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e85e91fbbd22b7148a71a65f83e2be3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitAimAtMouse
-  _orbitOrigin: {fileID: 2218846655404379918}
+  _orbitOriginTransform: {fileID: 2218846655404379918}
 --- !u!1 &6637546499328210533
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2218846655404379918}
   - component: {fileID: -3185106469792845827}
+  - component: {fileID: 7593864110228636696}
   - component: {fileID: 3339774967221608133}
   - component: {fileID: 8629043737171220294}
   m_Layer: 0
@@ -99,6 +100,18 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7593864110228636696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637546499328210533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855680dc94072fb409074da2acc68253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!50 &3339774967221608133
 Rigidbody2D:
   serializedVersion: 5
@@ -224,6 +237,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5977465883500278412, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+      propertyPath: _gunPositionTransform
+      value: 
+      objectReference: {fileID: 6871272424770508211}
     - target: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
       propertyPath: m_Name
       value: PlayerSprite
@@ -294,6 +311,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4090137344621445558, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
+      propertyPath: _gunHolderOriginTransform
+      value: 
+      objectReference: {fileID: 2218846655404379918}
     - target: {fileID: 4776196070799241583, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -304,6 +325,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8204780667308097054, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
       propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 2218846655404379918}
+    - target: {fileID: 8204780667308097054, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
+      propertyPath: _gunHolderOriginTransform
       value: 
       objectReference: {fileID: 2218846655404379918}
     m_RemovedComponents: []

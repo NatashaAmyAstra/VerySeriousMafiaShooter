@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
+    [SerializeField] private Transform _bulletOriginTransform;
     [SerializeField] private int _ammoCountMax;
     private int _ammoCount;
 
@@ -23,7 +24,7 @@ public class Gun : MonoBehaviour
         if(_ammoCount <= 0)
             return;
 
-        _loadedBullet.TriggerTypeBehaviour.Trigger(transform.position, transform.right, _loadedBullet.BulletDataSO);
+        _loadedBullet.TriggerTypeBehaviour.Trigger(_bulletOriginTransform.position, transform.right, _loadedBullet.BulletDataSO);
         _ammoCount -= 1;
     }
 

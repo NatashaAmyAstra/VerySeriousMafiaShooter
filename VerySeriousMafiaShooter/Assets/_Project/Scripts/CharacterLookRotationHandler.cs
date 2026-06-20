@@ -5,23 +5,21 @@ public class CharacterLookRotationHandler : MonoBehaviour
     private const string BLEND = "Blend";
 
     [SerializeField] private Animator _animator;
-
-
-    [SerializeField] private Transform _targetTransform;
+    [SerializeField] private Transform _gunPositionTransform;
 
     private void Update()
     {
-        CalculateRotationQuadrant(Camera.main.ScreenToWorldPoint(InputManager.Instance.MousePosition));
+        CalculateRotationState();
     }
 
-    private void CalculateRotationQuadrant(Vector2 lookTargetLocation)
+    private void CalculateRotationState()
     {
-        Vector2 lookVector = lookTargetLocation - (Vector2)transform.position;
+        Vector2 lookVector = _gunPositionTransform.position - transform.position;
         float lookAngle = Vector2.Angle(Vector2.up, lookVector) * Mathf.Sign(lookVector.x);
 
 
-        int rotationStateInt = Mod(Mathf.RoundToInt((lookAngle / 60)), 6);
-        _animator.SetFloat(BLEND, rotationStateInt);
+        int rotationStateValue = Mod(Mathf.RoundToInt((lookAngle / 60)), 6);
+        _animator.SetFloat(BLEND, rotationStateValue);
     }
 
     private int Mod(int a, int n)

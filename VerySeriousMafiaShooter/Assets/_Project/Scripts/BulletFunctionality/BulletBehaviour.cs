@@ -8,6 +8,20 @@ public class BulletBehaviour : MonoBehaviour
 
 
 
+
+    private void OnEnable()
+    {
+        _speed = _bulletDataSO.Speed - Random.Range(0, _bulletDataSO.Variance);
+        _lifeTime = 0;
+    }
+
+    private void OnDisable()
+    {
+        _bulletDataSO = null;
+    }
+
+
+
     private void Update()
     {
         HandleMovement();
@@ -18,7 +32,8 @@ public class BulletBehaviour : MonoBehaviour
 
     private void HandleMovement()
     {
-        float bulletVelocity = _speed * Time.deltaTime;
+        float dragMultiplier = _bulletDataSO.BulletDragCurve.Evaluate(_lifeTime / _bulletDataSO.KillTime);
+        float bulletVelocity = _speed * Time.deltaTime * dragMultiplier;
         Vector3 newPosition = transform.position + transform.right * bulletVelocity;
         transform.position = newPosition;
     }
@@ -32,18 +47,6 @@ public class BulletBehaviour : MonoBehaviour
             BulletSpawnPool.Instance.PoolObject(this);
         }
     }
-
-
-    private void OnEnable()
-    {
-        _speed = _bulletDataSO.Speed - Random.Range(0, _bulletDataSO.Variance);
-    }
-
-    private void OnDisable()
-    {
-        _bulletDataSO = null;
-    }
-
 
 
     public void SetBulletDataSO(BulletDataSO bulletDataSO)

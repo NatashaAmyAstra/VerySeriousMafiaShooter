@@ -12,5 +12,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5500c091c4de67344811b279db23ffe1, type: 3}
   m_Name: BasicBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletDataSO
-  Speed: 100
-  KillTime: 5
+  Prefab: {fileID: 0}
+  Speed: 50
+  Variance: 0
+  KillTime: 1
+  Inaccuracy: 0
+  ProjectileCount: 1
+  BulletDragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.50359714
+    - serializedVersion: 3
+      time: 0.27410018
+      value: 0.59428406
+      inSlope: -2.7056637
+      outSlope: -2.7056637
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.10668938
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.072395846
+      outSlope: -0.072395846
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.34285438
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

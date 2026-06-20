@@ -11,4 +11,6 @@ public class BulletDataSO : ScriptableObject
 
     public float Inaccuracy = 0f;
     public int ProjectileCount = 1;
+
+    public AnimationCurve BulletDragCurve = AnimationCurve.Linear(0, 1, 1, 0);
 }
