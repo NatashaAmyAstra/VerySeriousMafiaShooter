@@ -38,7 +38,9 @@ public class OrbitAimAtTarget : MonoBehaviour
         Vector2 lookVectorUp = Quaternion.Euler(0f, 0f, 90f) * lookVector;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, lookVectorUp);
 
-        lookVector *= _distanceFromOrigin;
-        transform.position = originPosition + lookVector;
+        transform.position = originPosition + (lookVector * _distanceFromOrigin);
+
+        float flipScale = Mathf.Sign(lookVector.x);
+        transform.localScale = new Vector3(1, flipScale, 1);
     }
 }

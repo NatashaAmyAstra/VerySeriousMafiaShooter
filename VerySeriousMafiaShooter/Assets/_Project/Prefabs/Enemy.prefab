@@ -220,7 +220,8 @@ PrefabInstance:
       propertyPath: _gunHolderOriginTransform
       value: 
       objectReference: {fileID: 7099786207058829740}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4090137344621445558, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -278,6 +279,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4239487880987538946, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+      propertyPath: _gunPositionTransform
+      value: 
+      objectReference: {fileID: 7787854166077074809}
     - target: {fileID: 5977465883500278412, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
       propertyPath: _gunPositionTransform
       value: 
@@ -289,37 +294,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7633241394670470236}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
---- !u!95 &3324905748840390839 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4082821926883555930, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
-  m_PrefabInstance: {fileID: 1625070217587120877}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3789313362691660490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2457611543458103335, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
   m_PrefabInstance: {fileID: 1625070217587120877}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5220184458637006487 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
-  m_PrefabInstance: {fileID: 1625070217587120877}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7633241394670470236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5220184458637006487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 417e0c3f01073da40a041f46328f316f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterLookRotationHandler
-  _animator: {fileID: 3324905748840390839}
-  _gunPositionTransform: {fileID: 7787854166077074809}

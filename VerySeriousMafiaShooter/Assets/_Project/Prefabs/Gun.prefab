@@ -65,7 +65,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5820595307132693430}
   - component: {fileID: 4776196070799241583}
-  - component: {fileID: 4090137344621445558}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -147,19 +146,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4090137344621445558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1473548567273512398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dc0a97ca596af64295bdaf25f27a4c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GunVisual
-  _gunHolderOriginTransform: {fileID: 0}
 --- !u!1 &7224491621476440293
 GameObject:
   m_ObjectHideFlags: 0
