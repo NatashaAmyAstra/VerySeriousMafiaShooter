@@ -6,6 +6,7 @@ public class GunVisual : MonoBehaviour
 
     private void Update() {
         int lookDirection = (int) Mathf.Sign(transform.position.x - _gunHolderOriginTransform.position.x);
-        transform.localScale = new Vector3(1, lookDirection, 1);
+        transform.localScale = new Vector3(lookDirection, 1, 1);
+        transform.localRotation = Quaternion.Euler(0, 0, -90 + lookDirection * 90);
     }
 }
