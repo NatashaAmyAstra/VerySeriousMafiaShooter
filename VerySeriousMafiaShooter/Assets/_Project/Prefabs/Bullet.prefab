@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0fe9fa7b5989f46bd579f5b4dac88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletBehaviour
+  _velocityVarianceSizeFactor: 30
 --- !u!1 &1771125485682604287
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +125,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: a5c098913cba21a4cae611770e4d4f60, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
