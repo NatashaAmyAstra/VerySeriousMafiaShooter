@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a8114f1bea589d4ebfb50ae5225dc94
+guid: 89f17a06dadf2c644b9fcc85479ec62a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 128
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -97,177 +97,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PBDown_1
+      name: TilesSmall
       rect:
         serializedVersion: 2
         x: 0
-        y: 33
-        width: 24
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 775c645f4345ca548b61346a80f1c9be
-      internalID: 1813587002
+      spriteID: 11734dfd6d891be42b25897429aef888
+      internalID: -394087925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PBDownLeft_1
+      name: TileLarge1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 33
-        width: 24
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 360f686a3c6227840a5389c09008cf05
-      internalID: -1565252097
+      spriteID: ff505ed4f3fd63a4795b3027eefd72f9
+      internalID: -182442335
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PBDownRight_1
+      name: TileLarge2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 33
-        width: 24
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5cfd7fa3e984134781267e8316d3956
-      internalID: -2034714826
+      spriteID: 80e8e3fc61f44204db3f2a9feac234df
+      internalID: -1961735631
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PBUp_1
+      name: TilesBrick
       rect:
         serializedVersion: 2
-        x: 72
-        y: 33
-        width: 24
-        height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 518d1a4cbb812274694a08f90a1b8f8c
-      internalID: -2047225993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PBDown_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1
-        width: 24
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3543b960f1ed92c489c0d91f39767f8c
-      internalID: 1745941549
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PBDownLeft_2
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 1
-        width: 24
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cca89e0a634587948a07ea84121c0e7e
-      internalID: -1314769363
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PBDownRight_2
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 1
-        width: 24
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0758509a2e27a104d9a8ec6f6e42ece1
-      internalID: 127569851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PBUp_2
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 1
-        width: 24
-        height: 27
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70e4757f313a4dc4a9903c8c4a6a8584
-      internalID: -1406342074
+      spriteID: 20e5c82c154844d4fa5e98b1ad549be6
+      internalID: -1042254150
       vertices: []
       indices: 
       edges: []
@@ -276,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ca4f605ce7bed2b4eb40a43005c7a86f
     internalID: 0
     vertices: []
     indices: 
@@ -286,16 +198,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":24.0,"y":28.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      PBDownLeft_1: -1565252097
-      PBDownLeft_2: -1314769363
-      PBDownRight_1: -2034714826
-      PBDownRight_2: 127569851
-      PBDown_1: 1813587002
-      PBDown_2: 1745941549
-      PBUp_1: -2047225993
-      PBUp_2: -1406342074
+      TileLarge1: -182442335
+      TileLarge2: -1961735631
+      TilesBrick: -1042254150
+      TilesSmall: -394087925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

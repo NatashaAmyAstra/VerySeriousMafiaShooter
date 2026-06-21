@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,10 +100,10 @@ TextureImporter:
       name: PHDown_1
       rect:
         serializedVersion: 2
-        x: 1
-        y: 17
-        width: 17
-        height: 14
+        x: 0
+        y: 34
+        width: 36
+        height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -112,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04d06d0ea012e7d418b31d644d055e0d
+      spriteID: dc9c5e3766ed7f04abda37926fadbd27
       internalID: 672053043
       vertices: []
       indices: 
@@ -122,10 +122,10 @@ TextureImporter:
       name: PHDownLeft_1
       rect:
         serializedVersion: 2
-        x: 19
-        y: 17
-        width: 17
-        height: 14
+        x: 36
+        y: 34
+        width: 36
+        height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -134,30 +134,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d4ca050dcb7fdc44a8b82dfc6561507
+      spriteID: c7f52021815979f4596b38b4326301b3
       internalID: 856354094
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PHDownRight_1
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 17
-        width: 17
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f44431e17d7de0748aa6e65c48da8737
-      internalID: -1281049736
       vertices: []
       indices: 
       edges: []
@@ -166,10 +144,10 @@ TextureImporter:
       name: PHUp_1
       rect:
         serializedVersion: 2
-        x: 55
-        y: 17
-        width: 17
-        height: 14
+        x: 108
+        y: 34
+        width: 36
+        height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,7 +156,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74f295dcd5d82ef468ef02d648f0ce18
+      spriteID: f5b72318dfb6d2142800971a9841254d
       internalID: 1014445548
       vertices: []
       indices: 
@@ -188,10 +166,10 @@ TextureImporter:
       name: PHUpLeft_1
       rect:
         serializedVersion: 2
-        x: 73
-        y: 17
-        width: 17
-        height: 14
+        x: 144
+        y: 34
+        width: 36
+        height: 29
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,30 +178,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bdb168cfc717db4a8e5f16891455e87
+      spriteID: 3e7ec0feff09ac94c881daaa492224cb
       internalID: -273982893
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PHUpRight_1
-      rect:
-        serializedVersion: 2
-        x: 91
-        y: 17
-        width: 17
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 096d67038068f74459440e3b32172581
-      internalID: -1709168726
       vertices: []
       indices: 
       edges: []
@@ -232,10 +188,10 @@ TextureImporter:
       name: PHDown_2
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
-        width: 17
-        height: 14
+        x: 0
+        y: 2
+        width: 36
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,7 +200,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2973090b3814d5d43b4cacfa53e9af50
+      spriteID: 9d28712f708542d4a8e5d9c1b6a72327
       internalID: 805769115
       vertices: []
       indices: 
@@ -254,10 +210,10 @@ TextureImporter:
       name: PHDownLeft_2
       rect:
         serializedVersion: 2
-        x: 19
-        y: 1
-        width: 17
-        height: 14
+        x: 36
+        y: 2
+        width: 36
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,30 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5854ce8f437d6d6489c133e7a6ac922c
+      spriteID: e10c3e6838e13444f9ad2bba12a03040
       internalID: -595727297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PHDownRight_2
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 1
-        width: 17
-        height: 14
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c42f753ad263cc44db8f072fb9347cb7
-      internalID: -1921144421
       vertices: []
       indices: 
       edges: []
@@ -298,10 +232,10 @@ TextureImporter:
       name: PHUp_2
       rect:
         serializedVersion: 2
-        x: 55
-        y: 1
-        width: 17
-        height: 14
+        x: 108
+        y: 2
+        width: 36
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,7 +244,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9abd73445f87619489b99a7c6482a6c2
+      spriteID: b46f2a83f00cd4b4e8e19832bd390021
       internalID: 916024286
       vertices: []
       indices: 
@@ -320,10 +254,10 @@ TextureImporter:
       name: PHUpLeft_2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 1
-        width: 17
-        height: 14
+        x: 144
+        y: 2
+        width: 36
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +266,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3225d96dddb060d44951cfc9cc4e0626
+      spriteID: faa7fe1fd1c2ae446a535f254ce44bf3
       internalID: -226070462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PHDownRight_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 34
+        width: 36
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30dc3423abd4f0c4ebbf57b0f0762467
+      internalID: -1281049736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PHUpRight_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 34
+        width: 36
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec1ccf9a941ea34f9e4ef95c71723f1
+      internalID: -1709168726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PHDownRight_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 2
+        width: 36
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23397a1e7e3ac5f45a25e4f29ab6c46c
+      internalID: -1921144421
       vertices: []
       indices: 
       edges: []
@@ -342,10 +342,10 @@ TextureImporter:
       name: PHUpRight_2
       rect:
         serializedVersion: 2
-        x: 91
-        y: 1
-        width: 17
-        height: 14
+        x: 180
+        y: 2
+        width: 36
+        height: 30
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -354,7 +354,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b6690867793a1e43ba786779a2436bd
+      spriteID: d53d44dea740c0e43945871808a027ef
       internalID: -1600252725
       vertices: []
       indices: 
@@ -374,7 +374,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":2.0},"gridSpriteSize":{"x":17.0,"y":15.0},"gridSpriteOffset":{"x":1.0,"y":1.0},"gridSpritePadding":{"x":1.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":2.0},"gridSpriteSize":{"x":36.0,"y":31.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":1,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       PHDownLeft_1: 856354094
       PHDownLeft_2: -595727297
