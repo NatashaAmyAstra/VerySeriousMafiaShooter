@@ -126,13 +126,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec57542f6ad65546a3140df1dc92752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyControllerAI
-  _behaviourState: 0
-  _navMeshAgent: {fileID: 7240955337166943412}
+  _detectPlayerRange: 10
   _maximumDistanceFromPlayer: 5
+  _minimumDistanceFromPlayer: 1.5
   _circleCastRadius: 0.5
   _obstacleLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  _obstacleAvoidanceConeDegrees: 80
+  _obstacleAvoidanceConeStepCount: 6
+  _defaultAIBehaviourState: 0
+  _navMeshAgent: {fileID: 7240955337166943412}
+  _enemyTargetingController: {fileID: 7483724681928549974}
 --- !u!195 &7240955337166943412
 NavMeshAgent:
   m_ObjectHideFlags: 0

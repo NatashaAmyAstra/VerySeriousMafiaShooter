@@ -18,26 +18,40 @@ public class EnemyControllerAI : MonoBehaviour
     public AIBehaviourStateAggressionBackAway BackAwayState = new AIBehaviourStateAggressionBackAway();
 
 
+    [Header("Behaviour Properties")]
+    [SerializeField] private float _detectPlayerRange = 10f;
 
-
-    [SerializeField] private behaviourState _defaultAIBehaviourState = behaviourState.Idle;
-    [SerializeField] private NavMeshAgent _navMeshAgent;
-
-    
     [SerializeField] private float _maximumDistanceFromPlayer = 5f;
-    public float MaximumDistanceFromPlayer { get { return _maximumDistanceFromPlayer; } set { } }
-    
-    [SerializeField] private float _minimumDistanceFromPlayer = 3f;
-    public float MinimumDistanceFromPlayer { get { return _minimumDistanceFromPlayer; } set { } }
+    [SerializeField] private float _minimumDistanceFromPlayer = 1.5f;
 
     [SerializeField] private float _circleCastRadius = 0.2f;
-    public float CircleCastRadius { get { return _circleCastRadius; } set { } }
-
     [SerializeField] private LayerMask _obstacleLayerMask;
+
+    [SerializeField] private float _obstacleAvoidanceConeDegrees = 80f;
+    [SerializeField] private int _obstacleAvoidanceConeStepCount = 6;
+    
+
+    public float MaximumDistanceFromPlayer { get { return _maximumDistanceFromPlayer; } set { } }
+    public float MinimumDistanceFromPlayer { get { return _minimumDistanceFromPlayer; } set { } }
+
+    public float CircleCastRadius { get { return _circleCastRadius; } set { } }
     public LayerMask ObstacleLayerMask { get { return _obstacleLayerMask; } set { } }
 
-    
+    public float ObstacleAvoidanceConeDegrees { get { return _obstacleAvoidanceConeDegrees; } set { } }
+    public int ObstacleAvoidanceConeStepCount { get { return _obstacleAvoidanceConeStepCount; } set { } }
+
+
+
+    [Header("Debug")]
+    [SerializeField] private behaviourState _defaultAIBehaviourState = behaviourState.Idle;
+
+    [Header("References")]
+    [SerializeField] private NavMeshAgent _navMeshAgent;
+    [SerializeField] private EnemyTargetingController _enemyTargetingController;
+
+
     private Transform _navMeshTargetTransform;
+
 
     private void Awake()
     {
@@ -92,20 +106,28 @@ public class EnemyControllerAI : MonoBehaviour
 
 
     // helper methods
-    public bool HasLineOfSightWithTarget(Transform targetTransform)
+    public bool HasLineOfSightWithTarget(Vector3 targetPosition)
     {
-        Vector2 circleCastDirection = targetTransform.position - transform.position;
+        if(Vector2.Distance(targetPosition, transform.position) > _detectPlayerRange)
+            return false;
+
+        Vector2 circleCastDirection = targetPosition - transform.position;
         RaycastHit2D raycastHit = Physics2D.CircleCast(transform.position, _circleCastRadius, circleCastDirection, circleCastDirection.magnitude, _obstacleLayerMask);
         return raycastHit.collider == null;
     }
 
     public float GetDistanceFromPlayer()
     {
-        return Vector3.Distance(transform.position, Player.Instance.transform.position);
+        return Vector3.Distance(transform.position, Player.Instance.position);
     }
 
     public bool HasReachedDestination()
     {
         return transform.position == _navMeshAgent.destination;
+    }
+
+    public void SetTarget(Transform target)
+    {
+        _enemyTargetingController.SetTarget(target);
     }
 }

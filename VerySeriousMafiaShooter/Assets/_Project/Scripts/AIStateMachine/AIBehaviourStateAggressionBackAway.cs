@@ -27,8 +27,8 @@ public class AIBehaviourStateAggressionBackAway : AIBehaviourStateBase
 
     private void SetBackAwayPosition(EnemyControllerAI parentController)
     {
-        Vector2 targetDirection = (parentController.transform.position - Player.Instance.transform.position).normalized;
-        Vector2 targetPosition = (Vector2)Player.Instance.transform.position + (targetDirection * parentController.MaximumDistanceFromPlayer);
+        Vector2 targetDirection = (parentController.transform.position - Player.Instance.position).normalized;
+        Vector2 targetPosition = (Vector2)Player.Instance.position + (targetDirection * parentController.MinimumDistanceFromPlayer);
 
         RaycastHit2D raycastHit = Physics2D.CircleCast(
             parentController.transform.position,
@@ -59,7 +59,7 @@ public class AIBehaviourStateAggressionBackAway : AIBehaviourStateBase
 
     private void EvaluateNeedToBackAway(EnemyControllerAI parentController)
     {
-        if(parentController.HasLineOfSightWithTarget(Player.Instance.transform) == false ||
+        if(parentController.HasLineOfSightWithTarget(Player.Instance.position) == false ||
             parentController.GetDistanceFromPlayer() > parentController.MaximumDistanceFromPlayer ||
             parentController.HasReachedDestination())
         {

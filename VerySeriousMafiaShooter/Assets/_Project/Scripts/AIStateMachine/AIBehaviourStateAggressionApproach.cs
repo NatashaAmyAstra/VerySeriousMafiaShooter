@@ -4,12 +4,11 @@ public class AIBehaviourStateAggressionApproach : AIBehaviourStateBase
 {
     public override void EnterState(EnemyControllerAI parentController)
     {
-        // not used
+        parentController.SetTarget(Player.Instance.transform);
     }
 
     public override void Update(EnemyControllerAI parentController)
     {
-        AvoidObstacles(parentController);
         MaintainDistance(parentController);
     }
 
@@ -26,22 +25,11 @@ public class AIBehaviourStateAggressionApproach : AIBehaviourStateBase
 
 
 
-    private void AvoidObstacles(EnemyControllerAI parentController)
-    {
-        // if the enemy does not have line of sight with the player, approach the player to their exact position to path around obstacles
-        if(parentController.HasLineOfSightWithTarget(Player.Instance.transform) == false)
-        {
-            parentController.SetStoppingDistance(0);
-        }
-        // once line of sight is regained, continue maintaining follow distance
-        else
-        {
-            parentController.SetStoppingDistance(parentController.MaximumDistanceFromPlayer);
-        }
-    }
-
     private void MaintainDistance(EnemyControllerAI parentController)
     {
+        if(parentController.HasLineOfSightWithTarget(Player.Instance.position) == false)
+            return;
+
         if(parentController.GetDistanceFromPlayer() < parentController.MinimumDistanceFromPlayer)
         {
             ExitState(parentController, parentController.BackAwayState);
@@ -50,6 +38,15 @@ public class AIBehaviourStateAggressionApproach : AIBehaviourStateBase
 
     private void ApproachPlayer(EnemyControllerAI parentController)
     {
-        parentController.SetNavMeshDestination(Player.Instance.transform.position);
+        if(parentController.HasLineOfSightWithTarget(Player.Instance.position) == false)
+        {
+            parentController.SetStoppingDistance(0);
+        }
+        else
+        {
+            parentController.SetStoppingDistance(parentController.MaximumDistanceFromPlayer);
+        }
+
+        parentController.SetNavMeshDestination(Player.Instance.position);
     }
 }

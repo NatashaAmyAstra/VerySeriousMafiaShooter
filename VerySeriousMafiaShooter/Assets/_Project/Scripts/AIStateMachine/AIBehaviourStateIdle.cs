@@ -4,21 +4,25 @@ public class AIBehaviourStateIdle : AIBehaviourStateBase
 {
     public override void EnterState(EnemyControllerAI parentController)
     {
-        throw new System.NotImplementedException();
+        // not used
     }
 
     public override void Update(EnemyControllerAI parentController)
     {
-        throw new System.NotImplementedException();
+        // not used
     }
 
     public override void FixedUpdate(EnemyControllerAI parentController)
     {
-        throw new System.NotImplementedException();
+        // check for player in range, then start tracking player
+        if(parentController.HasLineOfSightWithTarget(Player.Instance.position))
+        {
+            ExitState(parentController, parentController.ApproachState);
+        }
     }
 
     public override void ExitState(EnemyControllerAI parentController, AIBehaviourStateBase newState)
     {
-        throw new System.NotImplementedException();
+        parentController.SetState(newState);
     }
 }
