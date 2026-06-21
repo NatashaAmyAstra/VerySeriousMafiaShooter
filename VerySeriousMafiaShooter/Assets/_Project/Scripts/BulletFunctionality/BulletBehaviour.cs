@@ -2,16 +2,20 @@ using UnityEngine;
 
 public class BulletBehaviour : MonoBehaviour
 {
+    [SerializeField] private float _velocityVarianceSizeFactor = 30f;
+
     private BulletDataSO _bulletDataSO;
     private float _speed;
     private float _lifeTime;
 
+    private float _velocityVariance;
 
 
 
     private void OnEnable()
     {
-        _speed = _bulletDataSO.Speed - Random.Range(0, _bulletDataSO.Variance);
+        _velocityVariance = Random.Range(0, _bulletDataSO.VelocityVariance);
+        _speed = _bulletDataSO.Velocity - _velocityVariance;
         _lifeTime = 0;
     }
 
@@ -36,6 +40,8 @@ public class BulletBehaviour : MonoBehaviour
         float bulletVelocity = _speed * Time.deltaTime * dragMultiplier;
         Vector3 newPosition = transform.position + transform.right * bulletVelocity;
         transform.position = newPosition;
+
+        transform.localScale = Vector3.one * _bulletDataSO.BulletSizeHeightEffectCurve.Evaluate((_lifeTime / _bulletDataSO.KillTime) + (_velocityVariance / _velocityVarianceSizeFactor));
     }
 
     private void HandleCulling()

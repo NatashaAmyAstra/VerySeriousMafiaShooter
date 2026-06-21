@@ -3,6 +3,8 @@ using UnityEngine;
 public class EnemyTargetingController : OrbitAimAtTarget
 {
 
+    [SerializeField] private Transform _idleTargetTransform;
+
     protected override void Awake()
     {
         base.Awake();
@@ -21,6 +23,6 @@ public class EnemyTargetingController : OrbitAimAtTarget
 
     protected override void SetDefaultTarget()
     {
-        _targetObjectTransform = Player.Instance.transform;
+        _targetObjectTransform = _idleTargetTransform;
     }
 }

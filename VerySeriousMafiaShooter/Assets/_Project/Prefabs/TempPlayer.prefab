@@ -248,13 +248,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3155837817664845185}
   m_SourcePrefab: {fileID: 100100000, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
 --- !u!4 &2489862587887233447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2457611543458103335, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
   m_PrefabInstance: {fileID: 42490048934177152}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &4053218294354940890 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4082821926883555930, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+  m_PrefabInstance: {fileID: 42490048934177152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6803336647749395962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+  m_PrefabInstance: {fileID: 42490048934177152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3155837817664845185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6803336647749395962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417e0c3f01073da40a041f46328f316f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterLookRotationHandler
+  _animator: {fileID: 4053218294354940890}
+  _gunPositionTransform: {fileID: 6871272424770508211}
 --- !u!1001 &7575149602645470900
 PrefabInstance:
   m_ObjectHideFlags: 0
