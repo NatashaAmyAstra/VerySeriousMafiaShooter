@@ -129,7 +129,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyControllerAI
   _detectPlayerRange: 10
-  _maximumDistanceFromPlayer: 5
+  _timeBetweenShootAttempts: 0.5
+  _maximumDistanceFromPlayer: 8
   _minimumDistanceFromPlayer: 1.5
   _circleCastRadius: 0.5
   _obstacleLayerMask:

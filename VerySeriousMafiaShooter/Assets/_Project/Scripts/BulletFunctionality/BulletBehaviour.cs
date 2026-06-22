@@ -36,19 +36,19 @@ public class BulletBehaviour : MonoBehaviour
 
     private void HandleMovement()
     {
-        float dragMultiplier = _bulletDataSO.BulletDragCurve.Evaluate(_lifeTime / _bulletDataSO.KillTime);
+        float dragMultiplier = _bulletDataSO.BulletDragCurve.Evaluate(_lifeTime / _bulletDataSO.LifeTime);
         float bulletVelocity = _speed * Time.deltaTime * dragMultiplier;
         Vector3 newPosition = transform.position + transform.right * bulletVelocity;
         transform.position = newPosition;
 
-        transform.localScale = Vector3.one * _bulletDataSO.BulletSizeHeightEffectCurve.Evaluate((_lifeTime / _bulletDataSO.KillTime) + (_velocityVariance / _velocityVarianceSizeFactor));
+        transform.localScale = Vector3.one * _bulletDataSO.BulletSizeHeightEffectCurve.Evaluate((_lifeTime / _bulletDataSO.LifeTime) + (_velocityVariance / _velocityVarianceSizeFactor));
     }
 
     private void HandleCulling()
     {
         _lifeTime += Time.deltaTime;
 
-        if(_lifeTime > _bulletDataSO.KillTime)
+        if(_lifeTime > _bulletDataSO.LifeTime)
         {
             BulletSpawnPool.Instance.PoolObject(this);
         }

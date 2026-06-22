@@ -44,10 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8638798b768585944b46ac68fa2d9289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletConstructor
-  _loadPreconstructedBulletsIntoGun: 1
-  _gun: {fileID: 0}
-  _preconstructedBulletArray:
-  - TriggerType: 0
-    BulletDataSO: {fileID: 11400000, guid: b0d84bbc085dc0d418b6f28fef99abdd, type: 2}
-  - TriggerType: 1
-    BulletDataSO: {fileID: 11400000, guid: 601a7426d1e8d7043b9dc1f2eedec089, type: 2}
+  _gunUserBullets:
+  - IsPlayer: 1
+    User: {fileID: 0}
+    Bullets:
+    - TriggerType: 0
+      BulletDataSO: {fileID: 11400000, guid: b0d84bbc085dc0d418b6f28fef99abdd, type: 2}
+    - TriggerType: 1
+      BulletDataSO: {fileID: 11400000, guid: 601a7426d1e8d7043b9dc1f2eedec089, type: 2}

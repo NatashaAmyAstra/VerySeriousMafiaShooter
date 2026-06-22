@@ -25,11 +25,13 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
 
     public event EventHandler OnEnemyBecomeAggressive;
     public event EventHandler OnReloadGun;
-    public event IGunUser.BoolReturnEventDelegate OnFireGun;
+    public event IGunUser.GunFireActionEventDelegate OnFireGun;
 
     [Header("Behaviour Properties")]
     [SerializeField] private float _detectPlayerRange = 10f;
+    [SerializeField] private float _timeBetweenShootAttempts = 0.5f;
 
+    // fields exposed through properties
     [SerializeField] private float _maximumDistanceFromPlayer = 5f;
     [SerializeField] private float _minimumDistanceFromPlayer = 1.5f;
 
@@ -38,7 +40,8 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
 
     [SerializeField] private float _obstacleAvoidanceConeDegrees = 80f;
     [SerializeField] private int _obstacleAvoidanceConeStepCount = 6;
-    
+   
+
 
     public float MaximumDistanceFromPlayer { get { return _maximumDistanceFromPlayer; } set { } }
     public float MinimumDistanceFromPlayer { get { return _minimumDistanceFromPlayer; } set { } }
@@ -59,7 +62,8 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     [SerializeField] private EnemyTargetingController _enemyTargetingController;
 
 
-    private Transform _navMeshTargetTransform;
+    // private fields
+    private float _fireAttemptCooldown;
 
 
     private void Awake()
@@ -93,6 +97,7 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     }
 
 
+
     // controller methods
     public void SetState(AIBehaviourStateBase newState)
     {
@@ -112,6 +117,8 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     {
         _navMeshAgent.SetDestination(navMeshDestination);
     }
+
+
 
 
     // helper methods
@@ -146,17 +153,24 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
         _enemyTargetingController.TargetIdleTargetTransform();
     }
 
-    public bool FireGun()
+    public Gun.fireActionResult TryFireGun()
     {
-        bool? returnValue = OnFireGun?.Invoke(this, EventArgs.Empty);
-        if(returnValue == null)
-            return false;
+        _fireAttemptCooldown -= Time.deltaTime;
 
-        return (bool)returnValue;
+        if(_fireAttemptCooldown > 0)
+            return Gun.fireActionResult.failed;
+
+        Gun.fireActionResult? returnValue = OnFireGun?.Invoke(this, EventArgs.Empty);
+        _fireAttemptCooldown = _timeBetweenShootAttempts;
+
+        if(returnValue == null)
+            return Gun.fireActionResult.failed;
+
+        return (Gun.fireActionResult)returnValue;
     }
 
     public void Reload()
     {
-
+        OnReloadGun?.Invoke(this, EventArgs.Empty);
     }
 }

@@ -4,50 +4,38 @@ using UnityEngine;
 
 public class BulletConstructor : MonoBehaviour
 {
+    [SerializeField] private GunUserBullets[] _gunUserBullets;
 
-    [SerializeField] private bool _loadPreconstructedBulletsIntoGun;
-    [SerializeField] private Gun _gun;
-    [SerializeField] private BulletConstructionData[] _preconstructedBulletArray;
-
-    private List<Bullet> _bullets = new();
-
-
-    private void Awake()
-    {
-        ConstructPreconstructedBullets();
-    }
 
     private void Start()
     {
-        if(_loadPreconstructedBulletsIntoGun)
-            LoadPreconstructedBullets();
+        LoadPreconstructedBullets();
     }
 
     private void LoadPreconstructedBullets()
     {
-        foreach(Bullet bullet in _bullets)
+        foreach(GunUserBullets gunUser in _gunUserBullets)
         {
-            _gun.LoadBullet(bullet);
+            Gun gun;
+            if(gunUser.IsPlayer)
+                gun = Player.Instance.transform.GetComponentInChildren<Gun>();
+            else
+                gun = gunUser.User.GetComponentInChildren<Gun>();
+
+            foreach(BulletConstructionData bullet in gunUser.Bullets)
+            {
+                gun.LoadBullet(ConstructBullet(bullet.TriggerTypeBehaviour, bullet.BulletDataSO));
+            }
         }
     }
 
-
-
-    private void ConstructPreconstructedBullets()
+    private Bullet ConstructBullet(ITriggerTypeBehaviour triggerBehaviour, BulletDataSO bulletDataSO)
     {
-        foreach(BulletConstructionData bulletData in _preconstructedBulletArray)
-        {
-            ConstructBullet(bulletData.TriggerTypeBehaviour, bulletData.BulletDataSO);
-        }
-    }
-
-    private void ConstructBullet(ITriggerTypeBehaviour triggerBehaviour, BulletDataSO bulletDataSO)
-    {
-        Bullet bullet = new Bullet(triggerBehaviour, bulletDataSO);
-        _bullets.Add(bullet);
+        return new Bullet(triggerBehaviour, bulletDataSO);
     }
 
 }
+
 
 [Serializable]
 public class BulletConstructionData
@@ -67,4 +55,13 @@ public class BulletConstructionData
     [SerializeField] triggerType TriggerType;
     public ITriggerTypeBehaviour TriggerTypeBehaviour { get { return _triggerTypeBehaviourDict[TriggerType]; } set { } }
     public BulletDataSO BulletDataSO;
+}
+
+
+[Serializable]
+public class GunUserBullets
+{
+    public bool IsPlayer;
+    public Transform User;
+    public BulletConstructionData[] Bullets;
 }

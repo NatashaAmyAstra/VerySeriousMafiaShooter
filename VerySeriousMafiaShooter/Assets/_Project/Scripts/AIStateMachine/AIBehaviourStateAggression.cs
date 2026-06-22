@@ -15,6 +15,7 @@ public class AIBehaviourStateAggression : AIBehaviourStateBase
     public override void FixedUpdate(EnemyControllerAI parentController)
     {
         HandleMovement(parentController);
+        AttackPlayer(parentController);
     }
 
     public override void ExitState(EnemyControllerAI parentController, AIBehaviourStateBase newState)
@@ -48,6 +49,23 @@ public class AIBehaviourStateAggression : AIBehaviourStateBase
         parentController.SetStoppingDistance(parentController.MaximumDistanceFromPlayer);
         parentController.SetNavMeshDestination(Player.Instance.position);
     }
+
+
+    private void AttackPlayer(EnemyControllerAI parentController)
+    {
+        if(parentController.HasLineOfSightWithTarget(Player.Instance.position) == false)
+            return;
+
+        Gun.fireActionResult shootResult = parentController.TryFireGun();
+        if(shootResult == Gun.fireActionResult.noAmmo)
+        {
+            parentController.Reload();
+        }
+    }
+
+
+
+
 
 
     private Vector2 SetBackAwayPosition(EnemyControllerAI parentController)

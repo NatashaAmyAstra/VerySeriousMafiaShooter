@@ -19,7 +19,7 @@ public class GunUXHandler : MonoBehaviour
     {
         _gun.OnGunFired += PlayFiredAnimation;
         _gun.OnGunReloaded += PlayReloadAnimation;
-        _gun.OnGunJammed += PlayJammedAudio;
+        _gun.OnEmptyGunFired += PlayJammedAudio;
     }
 
     private void PlayFiredAnimation(object sender, EventArgs e)

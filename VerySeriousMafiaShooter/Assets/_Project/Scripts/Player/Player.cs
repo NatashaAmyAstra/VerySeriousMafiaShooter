@@ -7,7 +7,7 @@ public class Player : MonoBehaviour, IGunUser
 
 
     public event EventHandler OnReloadGun;
-    public event IGunUser.BoolReturnEventDelegate OnFireGun;
+    public event IGunUser.GunFireActionEventDelegate OnFireGun;
 
 
     public Vector3 position { get { return transform.position; } set { } }

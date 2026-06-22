@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 288507975331031249}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -0.156, z: 0}
+  m_LocalPosition: {x: -0.012, y: -0.192, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -84,7 +84,7 @@ GameObject:
   - component: {fileID: 5820595307132693430}
   - component: {fileID: 4776196070799241583}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: GunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 7224491621476440293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.24, y: 2.27, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -211,7 +211,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   _bulletOriginTransform: {fileID: 2495677430941577403}
+  _reloadDuration: 0.5
   _ammoCountMax: 6
+  _gunUserTransform: {fileID: 0}
 --- !u!1 &8356543781499124966
 GameObject:
   m_ObjectHideFlags: 0
