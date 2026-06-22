@@ -5,28 +5,46 @@ using UnityEngine;
 public class Gun : MonoBehaviour
 {
     public event EventHandler OnGunFired;
-    public event EventHandler OnGunReload;
+    public event EventHandler OnGunReloaded;
+    public event EventHandler OnGunJammed;
 
 
     [SerializeField] private Transform _bulletOriginTransform;
     [SerializeField] private int _ammoCountMax;
     private int _ammoCount;
 
+    [SerializeField] private Transform _gunUserTransform;
+    private IGunUser _gunUser;
+
     private List<Bullet> _bullets = new();
     private Bullet _loadedBullet;
 
+    private void Awake()
+    {
+        if(_gunUserTransform.TryGetComponent(out IGunUser gunUser))
+        {
+            _gunUser = gunUser;
+        }
+        else
+        {
+            throw new Exception("Reference placed in \"_gunUserTransform\" must contain a component of type \"IGunUser\"");
+        }
+    }
 
     private void Start()
     {
-        InputManager.Instance.OnPlayerShoot += FireBullet;
-        InputManager.Instance.OnPlayerReload += Reload;
+        _gunUser.OnFireGun += FireBullet;
+        _gunUser.OnReloadGun += Reload;
     }
 
 
     private void FireBullet(object sender, EventArgs e)
     {
         if(_ammoCount <= 0)
+        {
+            OnGunJammed?.Invoke(this, EventArgs.Empty);
             return;
+        }
 
         _loadedBullet.TriggerTypeBehaviour.Trigger(_bulletOriginTransform.position, transform.right, _loadedBullet.BulletDataSO);
         _ammoCount -= 1;
@@ -44,7 +62,7 @@ public class Gun : MonoBehaviour
 
         _ammoCount = _ammoCountMax;
 
-        OnGunReload?.Invoke(this, EventArgs.Empty);
+        OnGunReloaded?.Invoke(this, EventArgs.Empty);
     }
 
     public void LoadBullet(Bullet bullet)

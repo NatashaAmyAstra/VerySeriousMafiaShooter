@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyControllerAI : MonoBehaviour
+public class EnemyControllerAI : MonoBehaviour, IGunUser
 {
     private enum behaviourState
     {
@@ -25,7 +25,8 @@ public class EnemyControllerAI : MonoBehaviour
 
 
     public event EventHandler OnEnemyBecomeAggressive;
-
+    public event EventHandler OnFireGun;
+    public event EventHandler OnReloadGun;
 
     [Header("Behaviour Properties")]
     [SerializeField] private float _detectPlayerRange = 10f;
@@ -147,5 +148,15 @@ public class EnemyControllerAI : MonoBehaviour
         }
 
         _enemyTargetingController.TargetIdleTargetTransform();
+    }
+
+    public void FireGun()
+    {
+        OnFireGun?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void Reload()
+    {
+
     }
 }
