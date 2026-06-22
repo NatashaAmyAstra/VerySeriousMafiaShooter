@@ -4,7 +4,7 @@ public class AIBehaviourStateIdle : AIBehaviourStateBase
 {
     public override void EnterState(EnemyControllerAI parentController)
     {
-        // not used
+        parentController.SetTarget(null);
     }
 
     public override void Update(EnemyControllerAI parentController)

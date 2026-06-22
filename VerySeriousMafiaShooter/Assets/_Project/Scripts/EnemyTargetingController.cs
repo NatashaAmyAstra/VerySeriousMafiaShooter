@@ -8,11 +8,16 @@ public class EnemyTargetingController : OrbitAimAtTarget
 
     protected override void SetDefaultTarget()
     {
-        _targetObjectTransform = _idleTargetTransform;
+        TargetIdleTargetTransform();
     }
 
     public void SetTarget(Transform target)
     {
         _targetObjectTransform = target;
+    }
+
+    public void TargetIdleTargetTransform()
+    {
+        _targetObjectTransform = _idleTargetTransform;
     }
 }

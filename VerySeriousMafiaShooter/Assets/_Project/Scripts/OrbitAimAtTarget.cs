@@ -3,6 +3,7 @@ using UnityEngine;
 public class OrbitAimAtTarget : MonoBehaviour
 {
     [SerializeField] private Transform _orbitOriginTransform;
+    [SerializeField] private float _lerpSpeed;
     
     protected Transform _targetObjectTransform;
     private float _distanceFromOrigin;
@@ -31,16 +32,18 @@ public class OrbitAimAtTarget : MonoBehaviour
 
     private void HandleAimPosition()
     {
-        Vector2 originPosition = _orbitOriginTransform.position;
-        Vector2 targetPosition = _targetObjectTransform.position;
-        Vector2 lookVector = (targetPosition - originPosition).normalized;
+        Vector2 originTransformPosition = _orbitOriginTransform.position;
+        Vector2 targetTransformPosition = _targetObjectTransform.position;
 
-        Vector2 lookVectorUp = Quaternion.Euler(0f, 0f, 90f) * lookVector;
+        Vector2 targetVector = (targetTransformPosition - originTransformPosition).normalized;
+        Vector2 newVector = Vector2.Lerp(transform.localPosition, targetVector, _lerpSpeed).normalized;
+
+        Vector2 lookVectorUp = Quaternion.Euler(0f, 0f, 90f) * newVector;
         transform.rotation = Quaternion.LookRotation(Vector3.forward, lookVectorUp);
 
-        transform.position = originPosition + (lookVector * _distanceFromOrigin);
+        transform.localPosition = (newVector * _distanceFromOrigin);
 
-        float flipScale = Mathf.Sign(lookVector.x);
+        float flipScale = Mathf.Sign(newVector.x);
         transform.localScale = new Vector3(1, flipScale, 1);
     }
 }

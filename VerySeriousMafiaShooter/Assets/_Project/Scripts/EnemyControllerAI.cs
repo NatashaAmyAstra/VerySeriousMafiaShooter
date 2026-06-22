@@ -9,7 +9,12 @@ public class EnemyControllerAI : MonoBehaviour
         AggressionApproach,
         AggressionBackAway
     }
-
+    
+    public enum weaponTarget
+    {
+        Player,
+        Idle
+    }
 
     private AIBehaviourStateBase _behaviourState;
 
@@ -128,6 +133,12 @@ public class EnemyControllerAI : MonoBehaviour
 
     public void SetTarget(Transform target)
     {
-        _enemyTargetingController.SetTarget(target);
+        if(target != null)
+        {
+            _enemyTargetingController.SetTarget(target);
+            return;
+        }
+
+        _enemyTargetingController.TargetIdleTargetTransform();
     }
 }

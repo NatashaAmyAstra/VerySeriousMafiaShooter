@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrbitAimAtMouse
   _orbitOriginTransform: {fileID: 2218846655404379918}
+  _lerpSpeed: 0.1
 --- !u!1 &6637546499328210533
 GameObject:
   m_ObjectHideFlags: 0
