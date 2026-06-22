@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df13d2c2c9bb8fc40b0ebe9c1b0bb0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMotor
-  speed: 5
+  speed: 10
   collisionPadding: 0.015
   collisionMask:
     serializedVersion: 2
