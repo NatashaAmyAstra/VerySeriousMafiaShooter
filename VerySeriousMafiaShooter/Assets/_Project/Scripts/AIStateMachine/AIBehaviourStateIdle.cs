@@ -9,7 +9,7 @@ public class AIBehaviourStateIdle : AIBehaviourStateBase
 
     public override void Update(EnemyControllerAI parentController)
     {
-        // not used
+        parentController.AnimateIdleTargetPosition();
     }
 
     public override void FixedUpdate(EnemyControllerAI parentController)

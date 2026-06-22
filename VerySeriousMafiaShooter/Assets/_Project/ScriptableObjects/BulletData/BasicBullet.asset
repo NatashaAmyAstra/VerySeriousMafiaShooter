@@ -15,9 +15,7 @@ MonoBehaviour:
   Prefab: {fileID: 0}
   Velocity: 50
   VelocityVariance: 0
-  KillTime: 1
-  Inaccuracy: 0
-  ProjectileCount: 1
+  LifeTime: 5
   BulletDragCurve:
     serializedVersion: 2
     m_Curve:
@@ -69,6 +67,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  Inaccuracy: 0
+  ProjectileCount: 1
+  TriggerCooldown: 0.1
   BulletSizeHeightEffectCurve:
     serializedVersion: 2
     m_Curve:

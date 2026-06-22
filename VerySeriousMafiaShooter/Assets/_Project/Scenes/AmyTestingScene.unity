@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &600869270 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7099786207058829740, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
+  m_PrefabInstance: {fileID: 4614116401667831892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &672250863
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
+    - {fileID: 8629043737171220294, guid: 2994a5157735365e189a24d287de98bb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -789,6 +795,34 @@ PrefabInstance:
       propertyPath: _enemyGun
       value: 
       objectReference: {fileID: 1888007140}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.data[1].User
+      value: 
+      objectReference: {fileID: 600869270}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.data[1].IsPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.data[1].Bullets.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.data[1].Bullets.Array.data[1].TriggerType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.data[1].Bullets.Array.data[0].BulletDataSO
+      value: 
+      objectReference: {fileID: 11400000, guid: b0d84bbc085dc0d418b6f28fef99abdd, type: 2}
+    - target: {fileID: 7908355301153971472, guid: aed54447893597d43a9387f8ec583c20, type: 3}
+      propertyPath: _gunUserBullets.Array.data[1].Bullets.Array.data[1].BulletDataSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 601a7426d1e8d7043b9dc1f2eedec089, type: 2}
     - target: {fileID: 8574088165019788370, guid: aed54447893597d43a9387f8ec583c20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.74182
@@ -885,6 +919,14 @@ PrefabInstance:
     - target: {fileID: 7099786207058829740, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193509364522241889, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
+      propertyPath: _idleTargetTimerMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7193509364522241889, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
+      propertyPath: _idleTargetTimerMin
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7193509364522241889, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
       propertyPath: _navMeshTargetTransform

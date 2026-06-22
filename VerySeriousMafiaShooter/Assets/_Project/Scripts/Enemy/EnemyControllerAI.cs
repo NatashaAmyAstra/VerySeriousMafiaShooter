@@ -27,30 +27,29 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     public event EventHandler OnReloadGun;
     public event IGunUser.GunFireActionEventDelegate OnFireGun;
 
-    [Header("Behaviour Properties")]
+    [Header("Behaviour")]
     [SerializeField] private float _detectPlayerRange = 10f;
     [SerializeField] private float _timeBetweenShootAttempts = 0.5f;
 
-    // fields exposed through properties
-    [SerializeField] private float _maximumDistanceFromPlayer = 5f;
-    [SerializeField] private float _minimumDistanceFromPlayer = 1.5f;
+    [SerializeField] private float _idleTargetChangeTimerMin = 1f;
+    [SerializeField] private float _idleTargetChangeTimerMax = 8f;
 
+    // fields exposed through properties
+    [SerializeField] private float _distanceFromPlayerMax = 5f;
+    [SerializeField] private float _distanceFromPlayerMin = 1.5f;
+
+
+    [Header("Obstacle avoidance")]
     [SerializeField] private float _circleCastRadius = 0.2f;
     [SerializeField] private LayerMask _obstacleLayerMask;
-
-    [SerializeField] private float _obstacleAvoidanceConeDegrees = 80f;
-    [SerializeField] private int _obstacleAvoidanceConeStepCount = 6;
    
 
 
-    public float MaximumDistanceFromPlayer { get { return _maximumDistanceFromPlayer; } set { } }
-    public float MinimumDistanceFromPlayer { get { return _minimumDistanceFromPlayer; } set { } }
+    public float DistanceFromPlayerMax { get { return _distanceFromPlayerMax; } set { } }
+    public float DistanceFromPlayerMin { get { return _distanceFromPlayerMin; } set { } }
 
     public float CircleCastRadius { get { return _circleCastRadius; } set { } }
     public LayerMask ObstacleLayerMask { get { return _obstacleLayerMask; } set { } }
-
-    public float ObstacleAvoidanceConeDegrees { get { return _obstacleAvoidanceConeDegrees; } set { } }
-    public int ObstacleAvoidanceConeStepCount { get { return _obstacleAvoidanceConeStepCount; } set { } }
 
 
 
@@ -60,9 +59,11 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     [Header("References")]
     [SerializeField] private NavMeshAgent _navMeshAgent;
     [SerializeField] private EnemyTargetingController _enemyTargetingController;
+    [SerializeField] private Transform _idleTargetTransform;
 
 
     // private fields
+    private float _idleTargetTimer;
     private float _fireAttemptCooldown;
 
 
@@ -172,5 +173,18 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     public void Reload()
     {
         OnReloadGun?.Invoke(this, EventArgs.Empty);
+    }
+
+
+    public void AnimateIdleTargetPosition()
+    {
+        _idleTargetTimer -= Time.deltaTime;
+
+        if(_idleTargetTimer > 0)
+            return;
+
+        
+        _idleTargetTimer = UnityEngine.Random.Range(_idleTargetChangeTimerMin, _idleTargetChangeTimerMax);
+        _idleTargetTransform.localPosition = UnityEngine.Random.insideUnitCircle.normalized;
     }
 }

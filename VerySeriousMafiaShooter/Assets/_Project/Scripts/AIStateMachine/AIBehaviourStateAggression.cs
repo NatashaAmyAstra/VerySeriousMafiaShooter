@@ -38,7 +38,7 @@ public class AIBehaviourStateAggression : AIBehaviourStateBase
         }
 
         // if the enemy gets too close to the player, back up a bit
-        if(parentController.GetDistanceFromPlayer() < parentController.MinimumDistanceFromPlayer)
+        if(parentController.GetDistanceFromPlayer() < parentController.DistanceFromPlayerMin)
         {
             parentController.SetStoppingDistance(0);
             parentController.SetNavMeshDestination(SetBackAwayPosition(parentController));
@@ -46,7 +46,7 @@ public class AIBehaviourStateAggression : AIBehaviourStateBase
         }
 
         // approach the player
-        parentController.SetStoppingDistance(parentController.MaximumDistanceFromPlayer);
+        parentController.SetStoppingDistance(parentController.DistanceFromPlayerMax);
         parentController.SetNavMeshDestination(Player.Instance.position);
     }
 
@@ -71,13 +71,13 @@ public class AIBehaviourStateAggression : AIBehaviourStateBase
     private Vector2 SetBackAwayPosition(EnemyControllerAI parentController)
     {
         Vector2 targetDirection = (parentController.transform.position - Player.Instance.position).normalized;
-        Vector2 targetPosition = (Vector2)Player.Instance.position + (targetDirection * parentController.MinimumDistanceFromPlayer);
+        Vector2 targetPosition = (Vector2)Player.Instance.position + (targetDirection * parentController.DistanceFromPlayerMin);
 
         RaycastHit2D raycastHit = Physics2D.CircleCast(
             parentController.transform.position,
             parentController.CircleCastRadius,
             targetDirection,
-            parentController.MaximumDistanceFromPlayer,
+            parentController.DistanceFromPlayerMax,
             parentController.ObstacleLayerMask);
 
 
