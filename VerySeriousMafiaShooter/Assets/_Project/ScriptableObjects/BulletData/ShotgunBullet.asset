@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ShotgunBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletDataSO
   Prefab: {fileID: 0}
+  Damage: 1
   Velocity: 35
   VelocityVariance: 4
   LifeTime: 5

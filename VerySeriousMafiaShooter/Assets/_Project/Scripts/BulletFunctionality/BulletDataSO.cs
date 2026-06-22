@@ -6,6 +6,7 @@ public class BulletDataSO : ScriptableObject
     public Transform Prefab;
 
     [Header("Bullet properties")]
+    public int Damage = 3;
     public float Velocity = 100f;
     public float VelocityVariance = 0f;
     public float LifeTime = 5f;

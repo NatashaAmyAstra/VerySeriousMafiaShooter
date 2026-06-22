@@ -56,8 +56,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2218846655404379918}
-  - component: {fileID: -3185106469792845827}
   - component: {fileID: 7593864110228636696}
+  - component: {fileID: -3185106469792845827}
+  - component: {fileID: 916562766453154402}
   - component: {fileID: 3339774967221608133}
   - component: {fileID: 1088369078868251984}
   m_Layer: 0
@@ -84,6 +85,18 @@ Transform:
   - {fileID: 6871272424770508211}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7593864110228636696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637546499328210533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855680dc94072fb409074da2acc68253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!114 &-3185106469792845827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +114,7 @@ MonoBehaviour:
   collisionMask:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &7593864110228636696
+--- !u!114 &916562766453154402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,9 +123,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6637546499328210533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855680dc94072fb409074da2acc68253, type: 3}
+  m_Script: {fileID: 11500000, guid: e409b133e0c450d408e7a5f5de0e192b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  _healthMax: 10
 --- !u!50 &3339774967221608133
 Rigidbody2D:
   serializedVersion: 5
