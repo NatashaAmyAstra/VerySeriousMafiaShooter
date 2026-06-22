@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -21,6 +22,9 @@ public class EnemyControllerAI : MonoBehaviour
     public AIBehaviourStateIdle IdleState = new AIBehaviourStateIdle();
     public AIBehaviourStateAggressionApproach ApproachState = new AIBehaviourStateAggressionApproach();
     public AIBehaviourStateAggressionBackAway BackAwayState = new AIBehaviourStateAggressionBackAway();
+
+
+    public event EventHandler OnEnemyBecomeAggressive;
 
 
     [Header("Behaviour Properties")]
@@ -95,6 +99,9 @@ public class EnemyControllerAI : MonoBehaviour
     // controller methods
     public void SetState(AIBehaviourStateBase newState)
     {
+        if(_behaviourState == IdleState && newState != IdleState)
+            OnEnemyBecomeAggressive?.Invoke(this, EventArgs.Empty);
+
         _behaviourState = newState;
         newState.EnterState(this);
     }

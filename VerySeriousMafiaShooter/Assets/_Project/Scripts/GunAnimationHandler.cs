@@ -7,6 +7,10 @@ public class GunAnimationHandler : MonoBehaviour
     private const string RELOAD = "Reload";
 
 
+    [SerializeField] private AudioClip _audioClipFireBullet;
+    [SerializeField] private AudioClip _audioClipReload;
+
+
     [SerializeField] private Gun _gun;
     [SerializeField] private Animator _animator;
 
@@ -19,10 +23,12 @@ public class GunAnimationHandler : MonoBehaviour
     private void PlayFiredAnimation(object sender, EventArgs e)
     {
         _animator.SetTrigger(FIRE);
+        AudioPlayer.Instance.PlayClip(_audioClipFireBullet);
     }
 
     private void PlayReloadAnimation(object sender, EventArgs e)
     {
         _animator.SetTrigger(RELOAD);
+        AudioPlayer.Instance.PlayClip(_audioClipReload);
     }
 }

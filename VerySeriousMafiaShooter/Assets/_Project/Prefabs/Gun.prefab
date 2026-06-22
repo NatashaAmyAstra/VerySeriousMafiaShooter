@@ -68,6 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8746d6b8220a73438ee69f309d3b459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  _audioClipFireBullet: {fileID: 8300000, guid: 7229ce857bf74614da004b9a6f723417, type: 3}
+  _audioClipReload: {fileID: 8300000, guid: a070cae6630618b41b2108682f1eacab, type: 3}
   _gun: {fileID: 330700060023219508}
   _animator: {fileID: 1876992249230575543}
 --- !u!1 &1473548567273512398
