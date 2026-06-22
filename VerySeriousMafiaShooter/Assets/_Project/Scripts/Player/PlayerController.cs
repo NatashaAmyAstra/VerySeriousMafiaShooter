@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static InputManager;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
+[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask collisionMask;
 
     private Rigidbody2D rb;
-    private BoxCollider2D myCollider;
+    private Collider2D myCollider;
     private ContactFilter2D contactFilter;
     private RaycastHit2D[] hitBuffer = new RaycastHit2D[5];
 
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        myCollider = GetComponent<BoxCollider2D>();
+        myCollider = GetComponent<Collider2D>();
 
         rb.bodyType = RigidbodyType2D.Kinematic;
 

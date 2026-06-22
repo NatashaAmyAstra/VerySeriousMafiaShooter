@@ -6,8 +6,8 @@ public class Player : MonoBehaviour, IGunUser
     public static Player Instance;
 
 
-    public event EventHandler OnFireGun;
     public event EventHandler OnReloadGun;
+    public event IGunUser.BoolReturnEventDelegate OnFireGun;
 
 
     public Vector3 position { get { return transform.position; } set { } }

@@ -4,10 +4,10 @@ using UnityEngine.AI;
 
 public class EnemyControllerAI : MonoBehaviour, IGunUser
 {
-    private enum behaviourState
+    private enum aggressionState
     {
         Idle,
-        AggressionApproach,
+        Aggression,
         AggressionBackAway
     }
     
@@ -20,13 +20,12 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     private AIBehaviourStateBase _behaviourState;
 
     public AIBehaviourStateIdle IdleState = new AIBehaviourStateIdle();
-    public AIBehaviourStateAggressionApproach ApproachState = new AIBehaviourStateAggressionApproach();
-    public AIBehaviourStateAggressionBackAway BackAwayState = new AIBehaviourStateAggressionBackAway();
+    public AIBehaviourStateAggression AggressionState = new AIBehaviourStateAggression();
 
 
     public event EventHandler OnEnemyBecomeAggressive;
-    public event EventHandler OnFireGun;
     public event EventHandler OnReloadGun;
+    public event IGunUser.BoolReturnEventDelegate OnFireGun;
 
     [Header("Behaviour Properties")]
     [SerializeField] private float _detectPlayerRange = 10f;
@@ -53,7 +52,7 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
 
 
     [Header("Debug")]
-    [SerializeField] private behaviourState _defaultAIBehaviourState = behaviourState.Idle;
+    [SerializeField] private aggressionState _defaultAIBehaviourState = aggressionState.Idle;
 
     [Header("References")]
     [SerializeField] private NavMeshAgent _navMeshAgent;
@@ -72,14 +71,11 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
         // set behaviour state as selected in editor. Intended to be idle, but can be changed for debugging purposes
         switch(_defaultAIBehaviourState)
         {
-            case (behaviourState.Idle):
+            case (aggressionState.Idle):
                 SetState(IdleState);
                 break;
-            case (behaviourState.AggressionApproach):
-                SetState(ApproachState);
-                break;
-            case (behaviourState.AggressionBackAway):
-                SetState(BackAwayState);
+            case (aggressionState.Aggression):
+                SetState(AggressionState);
                 break;
         }
     }
@@ -100,7 +96,7 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
     // controller methods
     public void SetState(AIBehaviourStateBase newState)
     {
-        if(_behaviourState == IdleState && newState != IdleState)
+        if(newState == AggressionState)
             OnEnemyBecomeAggressive?.Invoke(this, EventArgs.Empty);
 
         _behaviourState = newState;
@@ -150,9 +146,13 @@ public class EnemyControllerAI : MonoBehaviour, IGunUser
         _enemyTargetingController.TargetIdleTargetTransform();
     }
 
-    public void FireGun()
+    public bool FireGun()
     {
-        OnFireGun?.Invoke(this, EventArgs.Empty);
+        bool? returnValue = OnFireGun?.Invoke(this, EventArgs.Empty);
+        if(returnValue == null)
+            return false;
+
+        return (bool)returnValue;
     }
 
     public void Reload()

@@ -17,7 +17,7 @@ public class AIBehaviourStateIdle : AIBehaviourStateBase
         // check for player in range, then start tracking player
         if(parentController.HasLineOfSightWithTarget(Player.Instance.position))
         {
-            ExitState(parentController, parentController.ApproachState);
+            ExitState(parentController, parentController.AggressionState);
         }
     }
 

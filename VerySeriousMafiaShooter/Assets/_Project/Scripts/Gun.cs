@@ -38,18 +38,20 @@ public class Gun : MonoBehaviour
     }
 
 
-    private void FireBullet(object sender, EventArgs e)
+    private bool FireBullet(object sender, EventArgs e)
     {
         if(_ammoCount <= 0)
         {
             OnGunJammed?.Invoke(this, EventArgs.Empty);
-            return;
+            return false;
         }
 
         _loadedBullet.TriggerTypeBehaviour.Trigger(_bulletOriginTransform.position, transform.right, _loadedBullet.BulletDataSO);
         _ammoCount -= 1;
 
         OnGunFired?.Invoke(this, EventArgs.Empty);
+
+        return true;
     }
 
     private void Reload(object sender, EventArgs e)
