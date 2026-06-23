@@ -16,7 +16,7 @@ MonoBehaviour:
   Damage: 1
   Velocity: 35
   VelocityVariance: 4
-  LifeTime: 5
+  LifeTime: 1
   BulletDragCurve:
     serializedVersion: 2
     m_Curve:

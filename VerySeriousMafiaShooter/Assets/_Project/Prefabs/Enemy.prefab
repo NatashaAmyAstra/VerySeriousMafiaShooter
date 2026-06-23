@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6299571865901261934}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IdleTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7787854166077074809}
   - component: {fileID: 7483724681928549974}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gunhand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,9 +90,10 @@ GameObject:
   - component: {fileID: 7099786207058829740}
   - component: {fileID: 8951494126559669575}
   - component: {fileID: 7193509364522241889}
+  - component: {fileID: 6000969472809002815}
   - component: {fileID: 7240955337166943412}
   - component: {fileID: 8611930000996733589}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,6 +157,42 @@ MonoBehaviour:
   _navMeshAgent: {fileID: 7240955337166943412}
   _enemyTargetingController: {fileID: 7483724681928549974}
   _idleTargetTransform: {fileID: 6299571865901261934}
+--- !u!58 &6000969472809002815
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507212393206611074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!195 &7240955337166943412
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -200,10 +237,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7787854166077074809}
     m_Modifications:
+    - target: {fileID: 288507975331031249, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 330700060023219508, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
       propertyPath: _gunUserTransform
       value: 
       objectReference: {fileID: 7099786207058829740}
+    - target: {fileID: 1473548567273512398, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3875006735777437693, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -252,10 +297,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 7224491621476440293, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8204780667308097054, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
       propertyPath: _gunHolderOriginTransform
       value: 
       objectReference: {fileID: 7099786207058829740}
+    - target: {fileID: 8356543781499124966, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4090137344621445558, guid: 28e7cdc6364d97d4492eaade7f1c8f3e, type: 3}
     m_RemovedGameObjects: []
@@ -275,6 +328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7099786207058829740}
     m_Modifications:
+    - target: {fileID: 2246590346375640098, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2457611543458103335, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -326,6 +383,14 @@ PrefabInstance:
     - target: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
       propertyPath: m_Name
       value: EnemySprite(PlayerSprite for now)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844550986699771002, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7175024017701026646, guid: a96941fc44a92a34b8e2549385aef745, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

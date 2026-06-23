@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: BasicBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletDataSO
   Prefab: {fileID: 0}
+  Damage: 3
   Velocity: 50
   VelocityVariance: 0
-  LifeTime: 5
+  LifeTime: 1
   BulletDragCurve:
     serializedVersion: 2
     m_Curve:

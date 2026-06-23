@@ -289,11 +289,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2218846655404379918, guid: 2994a5157735365e189a24d287de98bb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.95
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 2218846655404379918, guid: 2994a5157735365e189a24d287de98bb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.29
+      value: -0.82
       objectReference: {fileID: 0}
     - target: {fileID: 2218846655404379918, guid: 2994a5157735365e189a24d287de98bb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -661,11 +661,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1840241650 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2218846655404379918, guid: 2994a5157735365e189a24d287de98bb, type: 3}
-  m_PrefabInstance: {fileID: 776581642}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1857904313
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,14 +806,6 @@ PrefabInstance:
     - target: {fileID: 7099786207058829740, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7193509364522241889, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
-      propertyPath: _navMeshTargetTransform
-      value: 
-      objectReference: {fileID: 1840241650}
-    - target: {fileID: 7483724681928549974, guid: 43ccf955963f3b5449d1ba7042361cde, type: 3}
-      propertyPath: _slerpSpeed
-      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

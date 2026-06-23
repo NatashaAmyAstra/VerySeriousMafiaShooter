@@ -9,7 +9,7 @@ public class BulletDataSO : ScriptableObject
     public int Damage = 3;
     public float Velocity = 100f;
     public float VelocityVariance = 0f;
-    public float LifeTime = 5f;
+    public float LifeTime = 1f;
     public AnimationCurve BulletDragCurve = AnimationCurve.Linear(0, 1, 1, 0);
 
     [Header("Gun properties")]
