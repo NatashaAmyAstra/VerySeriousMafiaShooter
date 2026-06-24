@@ -6,6 +6,7 @@ public class ReloadVisual : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Gun _gun;
+    [SerializeField] private Transform _gunHandTransform;
 
     [Header("Visuals")]
     [SerializeField] private Transform _cylinderTransform;
@@ -25,6 +26,20 @@ public class ReloadVisual : MonoBehaviour
     {
         _gun.OnGunReloaded += OnGunReloaded;
     }
+
+    private void Update()
+    {
+        int cylinderSignedPosition = (int)Mathf.Sign(transform.localPosition.x);
+        int gunSignedPosition = (int)Mathf.Sign(_gunHandTransform.localPosition.x);
+
+        if(cylinderSignedPosition != gunSignedPosition)
+            return;
+
+        transform.localPosition = new Vector3(transform.localPosition.x * -1, transform.localPosition.y, transform.localPosition.z);
+    }
+
+
+
 
     private void SetChamberLocations()
     {
