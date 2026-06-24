@@ -65,6 +65,9 @@ public class BulletBehaviour : MonoBehaviour
 
     private RaycastHit2D? HandleCollision()
     {
+        if(_collider.enabled == false)
+            return null;
+
         float velocity = _speed * Time.deltaTime;
         RaycastHit2D[] circleCastHitArray = Physics2D.CircleCastAll(transform.position, _collider.radius, transform.right, velocity, _layerMask);
 

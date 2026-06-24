@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Health))]
 public class Player : MonoBehaviour, IGunUser
 {
     public static Player Instance;
@@ -12,6 +13,11 @@ public class Player : MonoBehaviour, IGunUser
 
     public Vector3 position { get { return transform.position; } set { } }
 
+
+    [SerializeField] private Health _health;
+
+
+
     private void Awake()
     {
         Instance = this;
@@ -21,6 +27,8 @@ public class Player : MonoBehaviour, IGunUser
     {
         InputManager.Instance.OnPlayerShoot += FireGun;
         InputManager.Instance.OnPlayerReload += Reload;
+
+        _health.OnHealthDepleted += OnPlayerDeath;
     }
 
     private void FireGun(object sender, EventArgs e)
@@ -31,5 +39,11 @@ public class Player : MonoBehaviour, IGunUser
     private void Reload(object sender, EventArgs e)
     {
         OnReloadGun?.Invoke(this, EventArgs.Empty);
+    }
+
+
+    private void OnPlayerDeath(object sender, EventArgs e)
+    {
+        Debug.Log("Player died :(");
     }
 }

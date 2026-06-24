@@ -14,8 +14,14 @@ public class Gun : MonoBehaviour
 
 
     public event EventHandler OnGunFired;
-    public event EventHandler OnGunReloaded;
     public event EventHandler OnEmptyGunFired;
+    public event EventHandler<OnGunReloadEventArgs> OnGunReloaded;
+    public class OnGunReloadEventArgs : EventArgs
+    {
+        public List<Bullet> BulletsInCylinder;
+        public Bullet SelectedBullet;
+        public float ReloadDuration;
+    }
 
 
     [SerializeField] private Transform _bulletOriginTransform;
@@ -99,7 +105,11 @@ public class Gun : MonoBehaviour
         _ammoCount = _ammoCountMax;
         _triggerCooldown = _reloadDuration;
 
-        OnGunReloaded?.Invoke(this, EventArgs.Empty);
+        OnGunReloaded?.Invoke(this, new OnGunReloadEventArgs() {
+            BulletsInCylinder = _bullets,
+            SelectedBullet = _loadedBullet,
+            ReloadDuration = _reloadDuration,
+        });
     }
 
     public void LoadBullet(Bullet bullet)

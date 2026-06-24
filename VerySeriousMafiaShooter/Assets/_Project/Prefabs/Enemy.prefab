@@ -88,6 +88,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7099786207058829740}
+  - component: {fileID: 727440178350860583}
   - component: {fileID: 8951494126559669575}
   - component: {fileID: 7193509364522241889}
   - component: {fileID: 6000969472809002815}
@@ -118,6 +119,19 @@ Transform:
   - {fileID: 6299571865901261934}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &727440178350860583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6507212393206611074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15519fee1d8085478ee43aa9d6ee0c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  _health: {fileID: 8951494126559669575}
 --- !u!114 &8951494126559669575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec57542f6ad65546a3140df1dc92752, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyControllerAI
-  _detectPlayerRange: 10
+  _detectPlayerRange: 16
   _timeBetweenShootAttempts: 0.5
   _idleTargetChangeTimerMin: 1
   _idleTargetChangeTimerMax: 8
