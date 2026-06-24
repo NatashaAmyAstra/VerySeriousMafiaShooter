@@ -211,9 +211,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   _bulletOriginTransform: {fileID: 2495677430941577403}
-  _reloadDuration: 0.5
+  _reloadDuration: 1
   _ammoCountMax: 6
   _gunUserTransform: {fileID: 0}
+  _cylinderChamberCount: 0
 --- !u!1 &8356543781499124966
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,10 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BulletDataSO : ScriptableObject
 {
-    public Transform Prefab;
+    [Header("Visual data")]
+    public Sprite BulletSprite;
+    public Sprite AmmoSprite;
+    public Color ColorInCylinder;
 
     [Header("Bullet properties")]
     public int Damage = 3;

@@ -1,6 +1,7 @@
-using System;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using System.Linq;
 
 public class Gun : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Gun : MonoBehaviour
     public event EventHandler<OnGunReloadEventArgs> OnGunReloaded;
     public class OnGunReloadEventArgs : EventArgs
     {
-        public List<Bullet> BulletsInCylinder;
+        public Bullet[] BulletsInCylinder;
         public Bullet SelectedBullet;
         public float ReloadDuration;
     }
@@ -32,7 +33,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform _gunUserTransform;
     private IGunUser _gunUser;
 
-    private List<Bullet> _bullets = new();
+    [SerializeField] private int _cylinderChamberCount = 6;
+    private Bullet[] _bullets;
     private Bullet _loadedBullet;
 
     private float _triggerCooldown = 0f;
@@ -49,6 +51,8 @@ public class Gun : MonoBehaviour
         {
             throw new Exception("Reference placed in \"_gunUserTransform\" must contain a component of type \"IGunUser\"");
         }
+
+        _bullets = new Bullet[_cylinderChamberCount];
     }
 
     private void Start()
@@ -93,14 +97,13 @@ public class Gun : MonoBehaviour
     private void Reload(object sender, EventArgs e)
     {
         // can't reload if there's no bullets to reload, nor if the gun is already fully loaded
-        if(_bullets.Count == 0 || _ammoCount == _ammoCountMax)
+        if(_bullets.Length == 0 || _ammoCount == _ammoCountMax)
         {
-            Debug.Log(_bullets.Count);
             return;
         }
 
-        int chamberIndex = UnityEngine.Random.Range(0, _bullets.Count);
-        _loadedBullet = _bullets[chamberIndex];
+
+        _loadedBullet = GetRandomBullet();
 
         _ammoCount = _ammoCountMax;
         _triggerCooldown = _reloadDuration;
@@ -112,8 +115,29 @@ public class Gun : MonoBehaviour
         });
     }
 
+    private Bullet GetRandomBullet()
+    {
+        List<Bullet> availableBullets = _bullets.Where(i => i != null).ToList();
+
+        return availableBullets[UnityEngine.Random.Range(0, availableBullets.Count)];
+    }
+
+
+
     public void LoadBullet(Bullet bullet)
     {
-        _bullets.Add(bullet);
+        for(int i = 0; i < _bullets.Length; i++)
+        {
+            if(_bullets[i] != null)
+                continue;
+
+            _bullets[i] = bullet;
+            break;
+        }
+    }
+
+    public int GetCylinderChamberCount()
+    {
+        return _cylinderChamberCount;
     }
 }

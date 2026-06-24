@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5500c091c4de67344811b279db23ffe1, type: 3}
   m_Name: BasicBullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletDataSO
-  Prefab: {fileID: 0}
+  BulletSprite: {fileID: 21300000, guid: a5c098913cba21a4cae611770e4d4f60, type: 3}
+  AmmoSprite: {fileID: -153417742, guid: b9910f6a17d2f744d9298c0432406baf, type: 3}
+  ColorInCylinder: {r: 0.9339623, g: 0.83989143, b: 0.3304112, a: 1}
   Damage: 3
   Velocity: 50
   VelocityVariance: 0
