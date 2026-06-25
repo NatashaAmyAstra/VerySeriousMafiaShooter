@@ -186,7 +186,7 @@ MonoBehaviour:
   _gun: {fileID: 7905708085513915264}
   _gunHandTransform: {fileID: 6871272424770508211}
   _cylinderTransform: {fileID: 5042135179679805129}
-  _cylinderChamberBaseTransform: {fileID: 8697585537656351610}
+  _cylinderChamberTemplateTransform: {fileID: 8697585537656351610}
   _minimumCylinderRovolutionCount: 5
   _cylinderSpinCurve:
     serializedVersion: 2

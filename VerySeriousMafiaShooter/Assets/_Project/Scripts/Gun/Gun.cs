@@ -22,6 +22,7 @@ public class Gun : MonoBehaviour
         public Bullet[] BulletsInCylinder;
         public Bullet SelectedBullet;
         public float ReloadDuration;
+        public int AmmoReloaded;
     }
 
 
@@ -112,6 +113,7 @@ public class Gun : MonoBehaviour
             BulletsInCylinder = _bullets,
             SelectedBullet = _loadedBullet,
             ReloadDuration = _reloadDuration,
+            AmmoReloaded = _ammoCount
         });
     }
 

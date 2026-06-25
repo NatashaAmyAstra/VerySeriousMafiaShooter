@@ -10,7 +10,7 @@ public class ReloadVisual : MonoBehaviour
 
     [Header("Visuals")]
     [SerializeField] private Transform _cylinderTransform;
-    [SerializeField] private Transform _cylinderChamberBaseTransform;
+    [SerializeField] private Transform _cylinderChamberTemplateTransform;
     [SerializeField] private int _minimumCylinderRovolutionCount = 10;
     [SerializeField] private AnimationCurve _cylinderSpinCurve = AnimationCurve.Linear(0, 0, 1, 1);
 
@@ -49,14 +49,14 @@ public class ReloadVisual : MonoBehaviour
 
         for(int i = 0; i < chamberCount; i++)
         {
-            Transform newChamberTransform = Instantiate(_cylinderChamberBaseTransform, _cylinderTransform);
-            Vector2 chamberPosition = Quaternion.Euler(0f, 0f, anglePerChamber * i) * _cylinderChamberBaseTransform.localPosition;
+            Transform newChamberTransform = Instantiate(_cylinderChamberTemplateTransform, _cylinderTransform);
+            Vector2 chamberPosition = Quaternion.Euler(0f, 0f, anglePerChamber * i) * _cylinderChamberTemplateTransform.localPosition;
 
             newChamberTransform.localPosition = chamberPosition;
             _cylinderChamberSpriteRendererArray[i] = newChamberTransform.GetComponent<SpriteRenderer>();
         }
 
-        _cylinderChamberBaseTransform.gameObject.SetActive(false);
+        _cylinderChamberTemplateTransform.gameObject.SetActive(false);
     }
 
 

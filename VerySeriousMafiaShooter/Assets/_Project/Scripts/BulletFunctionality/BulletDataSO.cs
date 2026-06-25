@@ -5,7 +5,7 @@ public class BulletDataSO : ScriptableObject
 {
     [Header("Visual data")]
     public Sprite BulletSprite;
-    public Sprite AmmoSprite;
+    public Sprite UIAmmoSprite;
     public Color ColorInCylinder;
 
     [Header("Bullet properties")]
